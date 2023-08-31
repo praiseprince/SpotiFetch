@@ -17,6 +17,7 @@ load_dotenv()
 client_id=os.getenv("CLIENT_ID")
 client_secret=os.getenv("CLIENT_SECRET")
 path=os.getenv("DOWNLOAD_PATH")
+url=os.getenv("URL")
 
 def get_token():
   auth_string = client_id + ":" + client_secret
@@ -208,7 +209,6 @@ def download_and_set_metadata(search_query, config, track):
 
 def main():
    token=get_token()
-   url="https://open.spotify.com/playlist/4NTwXnrX6oPYaWV1HA3AZR?si=573217c8dddf4606"
    json_result, url_type=get_spotify_data(token, url)
    clean_data=clean_json(json_result, url_type)
    downloader(clean_data, url_type)
