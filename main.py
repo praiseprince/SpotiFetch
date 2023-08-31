@@ -16,8 +16,7 @@ import base64
 load_dotenv()
 client_id=os.getenv("CLIENT_ID")
 client_secret=os.getenv("CLIENT_SECRET")
-path=os.getenv("DOWNLOAD_PATH")
-url=os.getenv("URL")
+path=os.getenv("TEMP_PATH")
 
 def get_token():
   auth_string = client_id + ":" + client_secret
@@ -174,6 +173,7 @@ def downloader(data, url_type):
         search_query = f"{track_name} by {artist_names}"
         file_path=ytdownload(search_query, path)
         set_metadata(data[0], file_path)
+        return file_path
     elif url_type == "album":
         album=data[0]['album']
         config=f"{path}/{album}"
@@ -188,6 +188,8 @@ def downloader(data, url_type):
             t.join()
         shutil.make_archive(config, 'zip', config)
         shutil.rmtree(config)
+        zip_path=f"{config}.zip"
+        return zip_path
     elif url_type=="playlist":
         playlist_name=data[0]['playlist']
         config=f"{path}/{playlist_name}"
@@ -202,15 +204,16 @@ def downloader(data, url_type):
             t.join()
         shutil.make_archive(config, 'zip', config)
         shutil.rmtree(config)
+        zip_path=f"{config}.zip"
+        return zip_path
 
 def download_and_set_metadata(search_query, config, track):
     file_path=ytdownload(search_query, config)
     set_metadata(track, file_path)
 
-def main():
+def execute(url):
    token=get_token()
    json_result, url_type=get_spotify_data(token, url)
    clean_data=clean_json(json_result, url_type)
-   downloader(clean_data, url_type)
-
-main()
+   file=downloader(clean_data, url_type)
+   return file

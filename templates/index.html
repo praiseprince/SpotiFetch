@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 <div id="header">
     <div class="container">
         <nav>
-            <img src="assets/SpotiFetch.png" class="logo">
+            <img src="{{url_for('static', filename='styles/assets/SpotiFetch.png')}}" class="logo">
             <ul id="sidemenu">
                 <li><a href="https://praiseprince.me">Contact Me</a></li>
             </ul>
@@ -20,8 +21,8 @@
             <h1>Spoti<span>Fetch.</br></span></h1>
             <p></br>Seamlessly download your favorite songs, playlists, and albums from Spotify.</p>             
             <div class="url-input-container">
-                <form action="your-server-side-script-url" method="POST">
-                    <input type="url" pattern="https://open\.spotify\.com/.*" id="url-input" required placeholder="Please paste the URL here.">
+                <form action="{{ url_for("home")}}" method="POST">
+                    <input type="url" pattern="https://open\.spotify\.com/.*" id="url-input" name="spotify_url" required placeholder="Please paste the URL here.">
                     <button type="submit">Submit</button>
                 </form>
             </div>
