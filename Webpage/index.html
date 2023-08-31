@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotiFetch</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="assets/SpotiFetch.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="https://praiseprince.me">Contact Me</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1>Spoti<span>Fetch.</br></span></h1>
+            <p></br>Seamlessly download your favorite songs, playlists, and albums from Spotify.</p>             
+            <div class="url-input-container">
+                <form action="your-server-side-script-url" method="POST">
+                    <input type="url" pattern="https://open\.spotify\.com/.*" id="url-input" required placeholder="Please paste the URL here.">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
