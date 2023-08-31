@@ -4,7 +4,7 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
 
 ## Screenshots
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/praiseprince/SpotiFetch/blob/main/static/styles/Assets/Readme%20Screenshot.png)
 
 ## How It Works
 
@@ -12,9 +12,9 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
 2. The app makes Spotify API calls based on the link and retrieves JSON data.
 3. JSON data is cleaned and processed to construct a search string.
 4. The search string is used to find content on YouTube.
-5. 'yt-dlp' library downloads content from YouTube.
-6. ffmpeg converts the content to MP3 format.
-7. Metadata (album art, album name, artists, release date) is added to the MP3 file.
+5. ['yt-dlp'](https://pypi.org/project/yt-dlp/) library downloads content from YouTube.
+6. [ffmpeg](https://ffmpeg.org/documentation.html) converts the content to MP3 format.
+7. Metadata (album art, album name, artists, release date) is added to the MP3 file using the [mutagen](https://pypi.org/project/mutagen/) library.
 8. If the input is a track, the user receives a single MP3 file. If it's an album or playlist, a zip file is provided.
 
 ## Technologies Used
@@ -35,13 +35,13 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
    ```
    pip install -r requirements.txt
    ```
-3. Install ffmpeg if you don't have it already.
+3. Install [ffmpeg](https://ffmpeg.org/download.html) if you don't have it already.
 4. Create a [Spotify developers account](https://developer.spotify.com/dashboard/), create an app, and obtain the client ID and client secret.
 5. Create a '.env' file in the project root directory and add the following information:
    ```
-   CLIENT_ID='<your-client-id>'
-   CLIENT_SECRET='<your-client-secret>'
-   TEMP_PATH='<path-to-store-intermediary-files>'
+   CLIENT_ID="<your-client-id>"
+   CLIENT_SECRET="<your-client-secret>"
+   TEMP_PATH="<path-to-store-intermediary-files>"
    ```
 6. Run the server to set up the web app locally.
 7. Access the web app by visiting the link your IDE provides in your browser.
