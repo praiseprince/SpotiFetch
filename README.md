@@ -17,12 +17,19 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
 7. Metadata (album art, album name, artists, release date) is added to the MP3 file using the [mutagen](https://pypi.org/project/mutagen/) library.
 8. If the input is a track, the user receives a single MP3 file. If it's an album or playlist, a zip file is provided.
 
-## Technologies Used
+## Files and Folders
 
-- HTML
-- CSS
-- Python
-- Flask
+```app.py```: This file contains the Flask integration for SpotiFetch. It includes routes that interact with the user, receive the Spotify link, and trigger the downloading and processing of content.
+
+```main.py```: This Python script is the heart of the content processing logic. It contains functions for making API calls to Spotify, constructing search queries for YouTube, using yt-dlp to download content, using ffmpeg for conversion, and mutagen for adding metadata. This script orchestrates the entire process of fetching, downloading, and enhancing the content.
+
+```requirements.txt```: This file lists all the Python dependencies required to run the application.
+
+```.env```: This file is used for storing sensitive environment variables, such as client ID, client secret, and temporary file path.
+
+```templates```: This folder contains the HTML template used for rendering the main page where users input the Spotify link and interact with the app.
+
+```static```: This folder holds static assets such as CSS file, images and icons.
 
 ## Getting Started
 
@@ -37,7 +44,7 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
    ```
 3. Install [ffmpeg](https://ffmpeg.org/download.html) if you don't have it already.
 4. Create a [Spotify developers account](https://developer.spotify.com/dashboard/), create an app, and obtain the client ID and client secret.
-5. Create a '.env' file in the project root directory and add the following information:
+5. Create a ```.env``` file in the project root directory and add the following information:
    ```
    CLIENT_ID="<your-client-id>"
    CLIENT_SECRET="<your-client-secret>"
