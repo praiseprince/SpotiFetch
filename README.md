@@ -49,5 +49,3 @@ SpotiFetch is a web app that allows you to download playlists, albums, or tracks
 ## Disclaimer
 This project is for educational and personal use only. Respect copyright and terms of use when downloading content from Spotify and YouTube.
 
-Remember to replace '<your-client-id>', '<your-client-secret>', and '<path-to-store-intermediary-files>' with appropriate values in the `.env` file.
-
