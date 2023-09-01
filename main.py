@@ -11,7 +11,8 @@ def home():
         dfile=SpotiFetch.execute(url)
         if dfile and os.path.exists(dfile):
             return send_file(dfile, as_attachment=True)
-    SpotiFetch.delete_folder_contents(SpotiFetch.path)
+    if SpotiFetch.path and os.path.exists(SpotiFetch.path):
+        SpotiFetch.delete_folder_contents(SpotiFetch.path)
     return render_template('index.html')
 
 if __name__=='__main__':
