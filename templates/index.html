@@ -21,7 +21,7 @@
             <h1>Spoti<span>Fetch.</br></span></h1>
             <p></br>Seamlessly download your favorite songs, playlists, and albums from Spotify.</p>             
             <div class="url-input-container">
-                <form action="{{ url_for("home")}}" method="POST">
+                <form action="{{ url_for("home")}}" method="POST" onsubmit="this.submit(); this.reset(); return false;">
                     <input type="url" pattern="https://open\.spotify\.com/.*" id="url-input" name="spotify_url" required placeholder="Please paste the URL here.">
                     <button type="submit">Submit</button>
                 </form>

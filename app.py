@@ -6,6 +6,7 @@ app=Flask(__name__)
 
 @app.route('/', methods =["GET", "POST"])
 def home():
+    main.delete_folder_contents(main.path)
     if request.method == "POST":
         url=request.form.get("spotify_url")
         dfile=main.execute(url)
@@ -14,4 +15,4 @@ def home():
     return render_template('index.html')
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
