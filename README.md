@@ -19,9 +19,9 @@ SpotiFetch is a seamless web app created using `Python`, `Flask`, `HTML`, and `C
 
 ## Repository Structure
 
-- ```app.py```: This file contains the Flask integration for SpotiFetch. It includes routes that interact with the user, receive the Spotify link, and trigger the downloading and processing of content.
+- ```main.py```: This file contains the Flask integration for SpotiFetch. It includes routes that interact with the user, receive the Spotify link, and trigger the downloading and processing of content.
 
-- ```main.py```: This Python script is the heart of the content processing logic. It contains functions for making API calls to Spotify, constructing search queries for YouTube, using yt-dlp to download content, using ffmpeg for conversion, and mutagen for adding metadata. This script orchestrates the entire process of fetching, downloading, and enhancing the content.
+- ```SpotiFetch.py```: This Python script is the heart of the content processing logic. It contains functions for making API calls to Spotify, constructing search queries for YouTube, using yt-dlp to download content, using ffmpeg for conversion, and mutagen for adding metadata. This script orchestrates the entire process of fetching, downloading, and enhancing the content.
 
 - ```requirements.txt```: This file lists all the Python dependencies required to run the application.
 
